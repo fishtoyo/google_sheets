@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="description" content="Google Sheets Database">
+<meta name="keywords" content="Google Sheets Database">
+<title>Google Sheets Database</title>
+<!-- Web Fonts -->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+<!-- Plugins -->
+<link href="assets/css/magnific-popup-1.0.0.css" rel="stylesheet">
+<link href="assets/css/magnific-popup-fadezoom.css" rel="stylesheet">
+<!-- CSS Customization -->
+<link href="assets/css/common.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="assets/js/plugins/html5shiv-3.7.2.min.js"></script>
+<script src="assets/js/plugins/respond-1.4.2.min.js"></script>
+<![endif]-->
+</head>
+<body>
+
+<header id="header">
+	<a href="index.html" class="列表"><i class="fa fa-fw fa-list"></i> 列表</a>
+	<a href="creat.html" class="新增"><i class="fa fa-fw fa-plus"></i> 新增</a>
+	<a href="search.html" class="搜尋"><i class="fa fa-fw fa-search"></i> 搜尋</a>
+</header>
+
+<div id="article-wrap">
+
+	<div class="subject">成績列表</div>
+	<table class="reset list">
+		<thead>
+			<tr>
+				<th>編號</th>
+				<th>標題</th>
+				<th>內容</th>
+			</tr>
+		</thead>
+		<tbody id="producttable">
+		</tbody>
+	</table>
+
+</div>
+
+<!--[if lt IE 9]>
+<script src="assets/js/plugins/jQuery/jquery-1.11.2.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="assets/js/plugins/jQuery/jquery-2.1.3.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/plugins/jQuery/jquery.mobile-1.4.5.custom.min.js"></script>
+<script src="assets/js/plugins/jQuery/jquery.magnific-popup-1.0.0.min.js"></script>
+<script>
+$(document).ready(function(e) {
+  var num   = [];
+  var name  = [];
+  var score = [];
+  var database = "https://spreadsheets.google.com/feeds/list/1cOcRWAya9yey6aw1EJ7PEGgVvpAPFsoDKgjPVH49InM/od6/public/values?alt=json"
+  $.getJSON(database, function (data){
+    for (var i=0; i < data.feed.entry.length; i++){
+      num[i]   = data.feed.entry[i].gsx$num.$t;
+      name[i]  = data.feed.entry[i].gsx$name.$t;
+      score[i] = data.feed.entry[i].gsx$score.$t;
+      $('#producttable').append("<tr><td>" + num[i] + "</td><td>" + name[i] + "</td><td>" + score[i] + "</td></tr>");
+    }
+  });
+
+});
+</script>
+</body>
+</html>

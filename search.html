@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="description" content="Google Sheets Database">
+<meta name="keywords" content="Google Sheets Database">
+<title>Google Sheets Database</title>
+<!-- Web Fonts -->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+<!-- Plugins -->
+<link href="assets/css/magnific-popup-1.0.0.css" rel="stylesheet">
+<link href="assets/css/magnific-popup-fadezoom.css" rel="stylesheet">
+<!-- CSS Customization -->
+<link href="assets/css/common.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="assets/js/plugins/html5shiv-3.7.2.min.js"></script>
+<script src="assets/js/plugins/respond-1.4.2.min.js"></script>
+<![endif]-->
+</head>
+<body>
+
+<header id="header">
+	<a href="index.html" class="列表"><i class="fa fa-fw fa-list"></i> 列表</a>
+	<a href="creat.html" class="新增"><i class="fa fa-fw fa-plus"></i> 新增</a>
+	<a href="search.html" class="搜尋"><i class="fa fa-fw fa-search"></i> 搜尋</a>
+</header>
+
+<div id="article-wrap">
+
+	<div class="subject">編號搜尋</div>
+	<table class="reset create">
+		<tr>
+			<th>編號</th>
+			<td><input type="text" id="numberInput2"></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="btn"><input type="button" value="查詢" onclick="Search()"></td>
+		</tr>
+	</table>
+	<br><br>
+	<table class="reset list">
+		<thead>
+			<tr>
+				<th>編號</th>
+				<th>標題</th>
+				<th>內容</th>
+			</tr>
+		</thead>
+		<tbody id="producttable2">
+		</tbody>
+	</table>
+
+</div>
+
+<!--[if lt IE 9]>
+<script src="assets/js/plugins/jQuery/jquery-1.11.2.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="assets/js/plugins/jQuery/jquery-2.1.3.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/plugins/jQuery/jquery.mobile-1.4.5.custom.min.js"></script>
+<script src="assets/js/plugins/jQuery/jquery.magnific-popup-1.0.0.min.js"></script>
+<script>
+function Search(){
+  $.get("https://script.google.com/macros/s/AKfycbwrVHWHTJKXoCyc-4AgpwebrXnqMtat1C2rHvUGx-dadJGk2Rki/exec", {
+  	"number": document.getElementById("numberInput2").value
+  }, function (data) {
+  	$('#producttable2').append(data);
+	});
+}
+</script>
+</body>
+</html>
