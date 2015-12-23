@@ -31,7 +31,17 @@
 
 <div id="article-wrap">
 
-	<div class="subject">成績列表</div>
+	<div class="subject">編號搜尋</div>
+	<table class="reset create">
+		<tr>
+			<th>編號</th>
+			<td><input type="text" id="numberInput2"></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="btn"><input type="button" value="查詢" onclick="Search()"></td>
+		</tr>
+	</table>
+	<br><br>
 	<table class="reset list">
 		<thead>
 			<tr>
@@ -40,7 +50,7 @@
 				<th>內容</th>
 			</tr>
 		</thead>
-		<tbody id="producttable">
+		<tbody id="producttable2">
 		</tbody>
 	</table>
 
@@ -55,21 +65,13 @@
 <script src="assets/js/plugins/jQuery/jquery.mobile-1.4.5.custom.min.js"></script>
 <script src="assets/js/plugins/jQuery/jquery.magnific-popup-1.0.0.min.js"></script>
 <script>
-$(document).ready(function(e) {
-  var num   = [];
-  var name  = [];
-  var score = [];
-  var database = "https://spreadsheets.google.com/feeds/list/1cOcRWAya9yey6aw1EJ7PEGgVvpAPFsoDKgjPVH49InM/od6/public/values?alt=json"
-  $.getJSON(database, function (data){
-    for (var i=0; i < data.feed.entry.length; i++){
-      num[i]   = data.feed.entry[i].gsx$num.$t;
-      name[i]  = data.feed.entry[i].gsx$name.$t;
-      score[i] = data.feed.entry[i].gsx$score.$t;
-      $('#producttable').append("<tr><td>" + num[i] + "</td><td>" + name[i] + "</td><td>" + score[i] + "</td></tr>");
-    }
-  });
-
-});
+function Search(){
+  $.get("https://script.google.com/macros/s/AKfycbwrVHWHTJKXoCyc-4AgpwebrXnqMtat1C2rHvUGx-dadJGk2Rki/exec", {
+  	"number": document.getElementById("numberInput2").value
+  }, function (data) {
+  	$('#producttable2').append(data);
+	});
+}
 </script>
 </body>
 </html>
