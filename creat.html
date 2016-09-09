@@ -63,9 +63,9 @@
 <script>
 function SendScore(){
 	$.get("https://script.google.com/macros/s/AKfycbx0IYxjCFp_G34YdK50FMyUozTemsdYNwc5X9SGxcoJ820e6pnK/exec", {
-		"date"    : document.getElementById("numberInput").value,
-		"subject" : document.getElementById("nameInput").value,
-		"content" : document.getElementById("scoreInput").value
+		"num"     : document.getElementById("numberInput").value,
+		"name"    : document.getElementById("nameInput").value,
+		"website" : document.getElementById("scoreInput").value
   }, function (data) {
     $.magnificPopup.open({
       items: {

@@ -36,19 +36,19 @@
 }
 #article-wrap th,
 #article-wrap td {
-	padding: 15px 5px;
+	padding: 15px;
+	text-align: left;
 }
 #article-wrap .list thead {
 	background-color: #eee;
 	border: 1px solid #ccc;
 }
-#article-wrap .list th,
 #article-wrap .list td {
-	width: 33.3%;
-}
-#article-wrap .list td {
-	text-align: center;
 	border-bottom: 1px solid #ccc;
+}
+#article-wrap .list .num {
+	width: 60px;
+	text-align: center;
 }
 #article-wrap .create {
 	width: auto;
