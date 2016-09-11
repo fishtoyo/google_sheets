@@ -67,7 +67,7 @@
 <script>
 function Search(){
   $.get("https://script.google.com/macros/s/AKfycbwrVHWHTJKXoCyc-4AgpwebrXnqMtat1C2rHvUGx-dadJGk2Rki/exec", {
-  	"number": document.getElementById("numberInput2").value
+  	"num" : document.getElementById("numberInput2").value
   }, function (data) {
   	$('#producttable2').append(data);
 	});
