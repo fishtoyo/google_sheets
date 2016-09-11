@@ -1,46 +1,14 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="">
-<meta name="description" content="Google Sheets Database">
-<meta name="keywords" content="Google Sheets Database">
-<title>Google Sheets Database</title>
-</head>
+<html>
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<header id="header">
-	<a href="index.html" class="列表"><i class="fa fa-fw fa-list"></i> 列表</a>
-	<a href="creat.html" class="新增"><i class="fa fa-fw fa-plus"></i> 新增</a>
-	<a href="search.html" class="搜尋"><i class="fa fa-fw fa-search"></i> 搜尋</a>
-</header>
+    NO: <input type="text" id="numberInput"><br><br>
+    Name: <input type="text" id="nameInput"><br><br>
+    Score: <input type="text" id="scoreInput"><br><br><br>
 
-<div id="article-wrap">
-
-	<div class="subject">新增成績</div>
-	<table class="reset create">
-		<tr>
-			<th>編號</th>
-			<td><input type="text" id="numberInput"></td>
-		</tr>
-		<tr>
-			<th>姓名</th>
-			<td><input type="text" id="nameInput"></td>
-		</tr>
-		<tr>
-			<th>分數</th>
-			<td><input type="text" id="scoreInput"></td>
-		</tr>
-		<tr>
-			<td colspan="2" class="btn"><input type="button" value="送出" onclick="SendScore()"></td>
-		</tr>
-	</table>
-
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-function SendScore(){
+    <input type="button" value="送出" onclick="SendScore()">
+    <script type="text/javascript">
+        function SendScore(){
   $.get("https://script.google.com/macros/s/AKfycbx0IYxjCFp_G34YdK50FMyUozTemsdYNwc5X9SGxcoJ820e6pnK/exec", {
     "num"     : document.getElementById("numberInput").value,
     "name"    : document.getElementById("nameInput").value,
@@ -52,6 +20,6 @@ function SendScore(){
     document.write("--------------------------");
   });
 }
-</script>
+    </script>
 </body>
 </html>
