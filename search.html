@@ -31,10 +31,10 @@
 
 <div id="article-wrap">
 
-	<div class="subject">編號搜尋</div>
+	<div class="subject">關鍵字搜尋</div>
 	<table class="reset create">
 		<tr>
-			<th>編號</th>
+			<th>關鍵字</th>
 			<td><input type="text" id="numberInput2"></td>
 		</tr>
 		<tr>
@@ -45,9 +45,9 @@
 	<table class="reset list">
 		<thead>
 			<tr>
-				<th>編號</th>
-				<th>標題</th>
-				<th>內容</th>
+				<th class="num">編號</th>
+				<th>客戶名稱</th>
+				<th>圖片</th>
 			</tr>
 		</thead>
 		<tbody id="producttable2">
@@ -66,8 +66,8 @@
 <script src="assets/js/plugins/jQuery/jquery.magnific-popup-1.0.0.min.js"></script>
 <script>
 function Search(){
-  $.get("https://script.google.com/macros/s/AKfycbwrVHWHTJKXoCyc-4AgpwebrXnqMtat1C2rHvUGx-dadJGk2Rki/exec", {
-  	"num" : document.getElementById("numberInput2").value
+  $.get("https://script.google.com/macros/s/AKfycbz6gpVsY-6kWbsqWo4Pyxgk7TIk9qoAmQ9Q6ee7vMHTSsFkz6DP/exec", {
+  	"input" : document.getElementById("numberInput2").value
   }, function (data) {
   	$('#producttable2').append(data);
 	});
