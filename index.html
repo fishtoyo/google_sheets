@@ -65,7 +65,7 @@ $(document).ready(function(e) {
       num[i]   = data.feed.entry[i].gsx$num.$t;
       name[i]  = data.feed.entry[i].gsx$name.$t;
       website[i] = data.feed.entry[i].gsx$website.$t;
-      $('#producttable').append("<tr><td class='num'>" + num[i] + "</td><td><a href='" + website[i] + "' title='" + name[i] + "' target='_blank'>" + name[i] + "</a></td><td><img src='http://fishtoyo.github.io/assets/images/cases/" + website[i] +  ".png' alt='*''></td></tr>");
+      $('#producttable').append("<tr><td class='num'>" + num[i] + "</td><td><a href='" + website[i] + "' title='" + name[i] + "' target='_blank'>" + name[i] + "</a></td><td><img src='http://fishtoyo.github.io/assets/images/cases/" + num[i] +  ".png' alt='*''></td></tr>");
     }
   });
 });
