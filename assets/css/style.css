@@ -1,129 +1,41 @@
 @charset "utf-8";
 
 /* Header */
-#header {
-	padding-top: 40px;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-}
-#header a {
-	margin: 0 10px;
-	padding: 10px;
-	color: #fff;
-	background-color: #28a7e1;
-	-webkit-border-radius: 5px;
-	        border-radius: 5px;
-}
-#header a:hover {
-	background-color: #e4007f;
-}
+#header { padding-top: 40px; height: 50px; line-height: 50px; text-align: center; }
+#header a { margin: 0 10px; padding: 10px; color: #fff; background-color: #28a7e1; -webkit-border-radius: 5px; border-radius: 5px; }
+#header a:hover { background-color: #e4007f; }
+
 /* Article */
-#article-wrap {
-	padding: 30px 0 100px;
-}
-#article-wrap .subject {
-	margin: 20px 0;
-	color: #444;
-	font-size: 24px;
-	line-height: 40px;
-	text-align: center;
-}
-#article-wrap table {
-	margin: 0 auto;
-	width: 100%;
-	max-width: 1000px;
-}
-#article-wrap th,
-#article-wrap td {
-	padding: 15px;
-	text-align: left;
-}
-#article-wrap .list thead {
-	background-color: #eee;
-	border: 1px solid #ccc;
-}
-#article-wrap .list td {
-	border-bottom: 1px solid #ccc;
-}
-#article-wrap .list .num {
-	width: 60px;
-	text-align: center;
-}
-#article-wrap .create {
-	width: auto;
-}
-#article-wrap .create th {
-	padding: 10px 20px;
-	background-color: #eee;
-	border-bottom: 1px solid #ddd;
-}
-#article-wrap .create td {
-	padding: 5px 10px;
-	border-bottom: 1px solid #ddd;
-}
-#article-wrap .create input {
-	padding: 5px;
-	height: 40px;
-	font-size: 18px;
-	background-color: #ddd;
-	border: 1px solid #ccc;
-	cursor: pointer;
-}
-#article-wrap .create input:hover { color: #fff; background-color: #555;}
-#article-wrap .create td.btn {
-	padding: 10px 0;
-	text-align: center;
-	border-bottom: none;
-}
-#article-wrap .create td.btn input {
-	padding: 10px;
-	width: 100%;
-	height: auto;
-	font-size: 15px;
-}
-
-
+#article-wrap { padding: 30px 0 100px; }
+#article-wrap .subject { margin: 20px 0; color: #444; font-size: 24px; line-height: 40px; text-align: center; }
+#article-wrap table { margin: 0 auto; width: 100%; max-width: 1000px; }
+#article-wrap th, #article-wrap td { padding: 15px; text-align: left; }
+#article-wrap .list thead { background-color: #eee; border: 1px solid #ccc; }
+#article-wrap .list td { border-bottom: 1px solid #ccc; }
+#article-wrap .list .num { width: 60px; text-align: center; }
+#article-wrap .create { width: auto; }
+#article-wrap .create th { padding: 10px 20px; background-color: #eee; border-bottom: 1px solid #ddd; }
+#article-wrap .create td { padding: 5px 10px; border-bottom: 1px solid #ddd; }
+#article-wrap .create input { padding: 5px; height: 40px; font-size: 18px; background-color: #ddd; border: 1px solid #ccc; cursor: pointer; }
+#article-wrap .create input:hover { color: #fff; background-color: #555; }
+#article-wrap .create td.btn { padding: 10px 0; text-align: center; border-bottom: none; }
+#article-wrap .create td.btn input { padding: 10px; width: 100%; height: auto; font-size: 15px; }
 
 /* ==========================================
    magnific-popup
 ========================================== */
-.popBox {
-	position: relative;
-	margin: 20px auto;
-	padding: 50px;
-  max-width: 300px;
-  text-align: center;
-	background-color: #fff;
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-.popBox .mfp-close {
-  right: 0;
-  top: 0;
-  width: 38px;
-  height: 38px;
-  overflow: hidden;
-  text-indent: -9999px;
-  background: #e4007f url("../images/btn_close.png");
-  opacity: 1;
-}
-.popBox .mfp-close:hover {
-	background-color: #28a7e1;
-}
-.popBox .icon {
-	margin: 0 auto 20px;
-	width: 60px;
-	height: 60px;
-	color: #fff;
-	font-size: 30px;
-	text-align: center;
-	line-height: 60px;
-	background-color: #28a7e1;
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
-}
+.popBox { position: relative; margin: 20px auto; padding: 50px; max-width: 300px; text-align: center; background-color: #fff; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.popBox .mfp-close { right: 0; top: 0; width: 38px; height: 38px; overflow: hidden; text-indent: -9999px; background: #e4007f url("../images/btn_close.png"); opacity: 1; }
+.popBox .mfp-close:hover { background-color: #28a7e1; }
+.popBox .icon { margin: 0 auto 20px; width: 60px; height: 60px; color: #fff; font-size: 30px; text-align: center; line-height: 60px; background-color: #28a7e1; -webkit-border-radius: 50%; border-radius: 50%; }
 
-
-
+/* ==========================================
+   List
+========================================== */
+#producttable { font-size: 0; text-align: left; }
+#producttable .box { border: 3px solid #fff; display: inline-block; position: relative; width: 20%; vertical-align: top; overflow: hidden; }
+#producttable .box .num { position: absolute; top: -50px; left: 0; background-color: rgba(0,0,0,.5); color: #fff; padding: 10px; font-size: 15px; z-index: 1; }
+#producttable .box img { width: 100%; }
+#producttable .box .title { position: absolute; bottom: -50px; left: 0; width: 100%; background-color: rgba(0,0,0,.5); padding: 10px; text-align: center; font-size: 15px; color: #fff; z-index: 1; }
+#producttable .box:hover .num { top: 0; }
+#producttable .box:hover .title { bottom: 0; }
